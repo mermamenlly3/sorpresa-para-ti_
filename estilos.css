@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #08001c, #18002f, #001f3f);
+    color: white;
+    overflow: hidden;
+}
+
+/* TARJETA */
+
+.tarjeta {
+    width: 90%;
+    max-width: 650px;
+    padding: 45px 35px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    background: rgba(10, 10, 30, 0.75);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(255, 0, 150, 0.3);
+    z-index: 2;
+}
+
+.icono {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: latido 1.5s infinite;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff4da6, #ffffff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitulo {
+    color: #ccc;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+/* TERMINAL */
+
+.terminal {
+    text-align: left;
+    background: #050509;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-family: monospace;
+    color: white;
+    box-shadow: inset 0 0 15px rgba(0,255,150,0.1);
+}
+
+.verde {
+    color: #00ff88;
+}
+
+.cursor {
+    color: #ff4da6;
+    animation: parpadeo 0.7s infinite;
+}
+
+/* BOTÓN */
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff1493, #ff4da6);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(255,20,147,0.5);
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255,20,147,0.8);
+}
+
+/* MENSAJE */
+
+.mensaje {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    animation: aparecer 1s ease;
+}
+
+.mensaje h2 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.mensaje p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #eee;
+}
+
+.especial {
+    color: #ff9dcc !important;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* CORAZONES */
+
+.corazon {
+    position: absolute;
+    color: #ff4da6;
+    font-size: 20px;
+    animation: subir 6s linear infinite;
+    opacity: 0.7;
+}
+
+/* ANIMACIONES */
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes parpadeo {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .tarjeta {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .icono {
+        font-size: 45px;
+    }
+
+}
